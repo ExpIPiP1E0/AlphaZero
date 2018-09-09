@@ -132,7 +132,7 @@ class EnviromentUtilities(object):
                 x+=dx ; y+=dy
                 if 0<=x<self.n_x and 0<=y<self.n_y and state[x,y]==-player:
                     flag=True
-                elif not(0<=x<self.n_x and 0<y<self.n_y) \
+                elif not(0<=x<self.n_x and 0<=y<self.n_y) \
                      or (flag==False and state[x,y]!=-player) \
                      or state[x,y]==0:
                     break
