@@ -35,21 +35,3 @@ class HumanPlayer(object):
             a=input()
             x,y=[int(x) for x in a.split(' ')] #x y形式で入力
             
-
-###############################################################################
-class GreedyPlayer(object):
-    '''
-    グリーディプレイヤー
-    '''
-    
-
-
-
-
-
-
-
-
-
-
-
