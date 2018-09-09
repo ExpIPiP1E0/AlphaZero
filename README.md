@@ -23,3 +23,4 @@ i.e. MCTS is policy improver of NeuralNet.
  - Enviroment.py : Othello enviroment.
  - Arena.py : 
  
+ Dirichlet noise in the original paper is approximated as adding random spike to prior distribution Ps\[s\]. Because Dir(0.03) is very spiky and number of valid actions in othello is very limited compared to Go, then I think it is not so material that correctly implemented.
