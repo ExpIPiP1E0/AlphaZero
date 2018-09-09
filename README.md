@@ -9,7 +9,7 @@ Othello enviroment code is based on beow book.
 https://www.amazon.co.jp/Pythonによる深層強化学習入門-ChainerとOpenAI-Gymではじめる強化学習-牧野-浩二/dp/4274222535/ref=sr_1_2?ie=UTF8&qid=1536471915&sr=8-2&keywords=深層強化学習
 
 ## Main Algorithm
-**NeuralNet(state) <- \[MCTS (NeuralNet,state),actual game result\]**
+**NeuralNet(state) <- \[MCTS (NeuralNet,state),actual game result\]**  
 i.e. MCTS is policy improver of NeuralNet.
 
 ## Source files
