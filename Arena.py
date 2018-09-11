@@ -94,6 +94,8 @@ class Arena(object):
             episode+=1
             if num_episodes<episode:
                 break
+
+            self.player1,self.player2=self.player2,self.player1 #入替
             
         return one_win,two_win,draws
             
