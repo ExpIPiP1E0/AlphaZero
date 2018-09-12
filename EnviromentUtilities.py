@@ -158,7 +158,8 @@ class EnviromentUtilities(object):
                     flag=True
                     tmp_next_state[x,y]=player
                 elif not(0<=x<self.n_x and 0<=y<self.n_y) \
-                     or flag==False and next_state[x,y]!=-player:
+                     or (flag==False and next_state[x,y]!=-player) \
+                     or state[x,y]==0:
                     break
                 elif next_state[x,y]==player and flag==True:
                     next_state=tmp_next_state
