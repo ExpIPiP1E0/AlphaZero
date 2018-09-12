@@ -53,7 +53,8 @@ class MCTS(object):
             probs[best_a]=1
             return probs
         
-        probs=counts**(1./temp)/counts.sum()
+        probs=counts**(1./temp)
+        probs=probs/probs.sum()
         return probs
         
     
