@@ -72,7 +72,7 @@ class MCTS(object):
             self.Es[s]=self.env_model_utils.get_ended(canonical_state,1)
         
         if self.Es[s]!=0:
-            return self.Es[s]
+            return -self.Es[s]
         
         #2
         if s not in self.Ps:
