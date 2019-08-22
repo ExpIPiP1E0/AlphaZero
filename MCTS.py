@@ -4,6 +4,7 @@
 import numpy as np
 import math
 import time
+
 EPS=1e-8 #UCT計算時において，状態sへの訪問数が2のときのため．
 #import cupy as cp
 
@@ -25,7 +26,6 @@ class MCTS(object):
         self.Ps ={} #nnetによって推定される状態sにおける方策a
         self.Es ={} #状態sの終了判定：player1の勝利なら1・敗北なら-1・終了で無ければ0．
         self.Vs ={} #状態sの合法手．
-        self.Ws ={} #Σ_a Q(s,a)
 
 
     ###########################################################################
@@ -44,13 +44,13 @@ class MCTS(object):
         s=self.env_model_utils.get_string_representation(canonical_state)
         counts=np.array([self.Nsa[(s,a)] if (s,a) in self.Nsa else 0 for a in range(self.env_model_utils.get_action_size())])
         
-        #counts=0
+        #counts<=1だとバグってしまう．そのうち直す．
         
         #ボルツマン温度が0ならば，グリーディ方策．
         if temp==0:
             best_a=np.argmax(counts)
             probs=np.zeros(len(counts))
-            probs[best_a]=1
+            probs[best_a]=1.0
             return probs
         
         probs=counts**(1./temp)
